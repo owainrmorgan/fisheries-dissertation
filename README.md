@@ -1,4 +1,4 @@
-# fisheries-dissertation
+# Fisheries Dissertation
 This repository will contain my work on the project
 "Fisheries Data Analysis"
 supervised by
