@@ -1,7 +1,7 @@
 library('tidyverse')
 library('lubridate')
 
-# First load in the data we're intereseted in
+# First load in the data we're interested in
 landings_data <- read_csv("_data/sample_landings_data_raw.csv")
 
 # Then observe the data
