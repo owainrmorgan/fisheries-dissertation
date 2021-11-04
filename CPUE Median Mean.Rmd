@@ -46,23 +46,22 @@ cpue_data <- cpue_data %>%
 #for the year rather than for each individual trip.
 cpue_data_ann_median <- cpue_data %>%
   group_by(Year) %>%
-  summarise(Median_CPUE_kg_per_hr = median(Trip_CPUE)) 
+  summarise(CPUE_kg_per_hr = median(Trip_CPUE)) 
 
 cpue_data_ann_mean <- cpue_data %>%
   group_by(Year) %>%
-  summarise(Mean_CPUE_kg_per_hr = mean(Trip_CPUE)) 
+  summarise(CPUE_kg_per_hr = mean(Trip_CPUE)) 
 
+cpue_data_ann_mean$Type <- "Mean"
+
+cpue_data_ann_median$Type <- "Median"
+
+cpue <- rbind(cpue_data_ann_mean, cpue_data_ann_median)
 #Fortunately cpue_data_ann_median matches with the published results.
 
-ggplot() +
-  geom_point(shape = 24, data = cpue_data_ann_mean, aes(x=Year, y=Mean_CPUE_kg_per_hr), 
-             color = "red", show.legend = TRUE) +
-  geom_line(data = cpue_data_ann_mean, aes(x=Year, y=Mean_CPUE_kg_per_hr), 
-            color = "red", show.legend = TRUE) +
-  geom_point(shape = 22, data = cpue_data_ann_median, aes(x=Year, y=Median_CPUE_kg_per_hr), 
-             color = "blue") +
-  geom_line(data = cpue_data_ann_median, aes(x=Year, y=Median_CPUE_kg_per_hr), 
-             color = "blue") +
+ggplot(cpue, aes(x=Year, y=CPUE_kg_per_hr, colour = Type)) +
+  geom_point(shape = 24) +
+  geom_line() +
   #xlab("Year") +
   #ylab("Comparison of CPUE [kg/hr]") +
   ylab("CPUE [kg/hr]") +
