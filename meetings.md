@@ -19,3 +19,16 @@ estimation, which I agree will give him a good opportunity to exhibit his mathem
 writing skills. I ask him to also include a description of some background material on 
 a topic related to his project with lots of references to the literature.
 
+
+## 30/11/21
+
+Owain has started a new repository for his preliminary report at 
+https://github.com/owainrmorgan/preliminaryreport. I again approve his plans
+and remind him of the importance of including a description of the background
+and the literature.
+
+We will meet again in week 2 of the spring term, at which time Owain will talk
+me through the exponential family of distributions and tell me how an extra
+exponential factor will change the parameters and how to estimate the
+parameters.
+
